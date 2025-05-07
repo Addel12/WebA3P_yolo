@@ -8,6 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app
 WORKDIR /app
 
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "wsgi:app"]
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:$PORT wsgi:app"]
+
 
 
